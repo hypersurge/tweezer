@@ -42,7 +42,9 @@ var l_tweenType = ETween.BOUNCE; // The tween type
 var l_currentValue = TweenFactory.createTween( l_currentTime, l_startValue, l_changeInValue, l_duration, l_easeType, l_tweenType );
 ```
 
-For real-world implementations local variables need not be used, they are shown here for ease of explanation.
+Please note, for real-world implementations local variables need not be used, they are shown here for ease of explanation.
+
+## Features
 
 The following Easing Types are included:
 	
@@ -65,4 +67,4 @@ And the following Tween Types are included:
  * Quintic: easing equation function for a quintic (t^5)
  * Sine: easing equation function for a sinusoidal (sin(t))
  
- A demo suite to visually illustrate the various combinations of Easing and Tweeing types is available in the demo folder.  The demo uses the awe6 and createjs libraries available on haxelib.
+A demo suite, to visually illustrate the various combinations of Easing and Tweeing types, is available in the [demo folder](https://github.com/hypersurge/tweezer/tree/master/demo).  The demo uses the awe6 and createjs libraries available on haxelib.
