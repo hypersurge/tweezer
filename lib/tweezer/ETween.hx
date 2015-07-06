@@ -49,7 +49,7 @@ enum ETween
 	 */
 	CIRCULAR;
 	/**
-	 * Easing equation function for a cubic (t^3).
+	 * Easing equation function for a cubic (t^3)
 	 */
 	CUBIC;
 	/**
@@ -63,7 +63,7 @@ enum ETween
 	 */
 	EXPONENTIAL;
 	/**
-	 * Easing equation function for a simple linear tweening.
+	 * Easing equation function for a simple linear tweening
 	 */
 	LINEAR;
 	/**
