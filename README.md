@@ -1,4 +1,4 @@
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE.md) 
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE.md) [![Haxelib Version](https://img.shields.io/badge/haxelib-v0.1.9-blue.svg)](http://lib.haxe.org/p/tweezer)
 
 # Tweezer
 Tweezer is an easy tweening and easing library designed primarily for use with [awe6](http://awe6.org), the inverted game framework.
