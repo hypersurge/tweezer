@@ -1,0 +1,13 @@
+{
+  "name": "tweezer",
+  "license": "MIT",
+  "tags": ["cross","js","flash","game","html5","tween","awe6"],
+  "description": "tweezer is an easy tweening and easing library designed primarily for use with awe6 (optional).",
+  "contributors": ["hypersurge"],
+  "releasenote": "Initial public / haxelib release.  https://github.com/hypersurge/tweezer",
+  "version": "0.1.2",
+  "url": "https://github.com/hypersurge/tweezer",
+  "dependencies": {
+
+  }
+}
