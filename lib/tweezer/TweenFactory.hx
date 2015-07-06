@@ -49,29 +49,29 @@ class TweenFactory
 	/**
 	 * Helper function to create a tween value.
 	 * @param	p_currentTime	Current time (in frames or seconds)
-	 * @param	p_startingValue	Starting value
+	 * @param	p_startValue	Starting value
 	 * @param	p_changeInValue	Change needed in value
 	 * @param	p_duration	Expected easing duration (in frames or seconds)
 	 * @param	p_easingType	The type of easing
 	 * @param	p_tweenType	The type of tween function
 	 * @return	The tweened value
 	 */
-	public static function createTween( p_currentTime:Float, p_startingValue:Float, p_changeInValue:Float, p_duration:Float, p_easeType:EEase, p_tweenType:ETween ):Float
+	public static function createTween( p_currentTime:Float, p_startValue:Float, p_changeInValue:Float, p_duration:Float, p_easeType:EEase, p_tweenType:ETween ):Float
 	{
-		return createTweenFunction( p_startingValue, p_changeInValue, p_duration, p_easeType, p_tweenType )( p_currentTime );
+		return createTweenFunction( p_startValue, p_changeInValue, p_duration, p_easeType, p_tweenType )( p_currentTime );
 	}
 	
 	/**
 	 * Helper function to create a tween function.
 	 * @param	p_currentTime	Current time (in frames or seconds)
-	 * @param	p_startingValue	Starting value
+	 * @param	p_startValue	Starting value
 	 * @param	p_changeInValue	Change needed in value
 	 * @param	p_duration	Expected easing duration (in frames or seconds)
 	 * @param	p_easingType	The type of easing
 	 * @param	p_tweenType	The type of tween function
 	 * @return	The simple tween function
 	 */
-	public static function createTweenFunction( p_startingValue:Float, p_changeInValue:Float, p_duration:Float, p_easeType:EEase, p_tweenType:ETween ):Float->Float
+	public static function createTweenFunction( p_startValue:Float, p_changeInValue:Float, p_duration:Float, p_easeType:EEase, p_tweenType:ETween ):Float->Float
 	{
 		if ( p_easeType == null )
 		{
@@ -90,34 +90,34 @@ class TweenFactory
 				}
 				switch( p_easeType )
 				{
-					case EASE_IN : function( p_value:Float ) { return Back.easeIn( p_value, p_startingValue, p_changeInValue, p_duration, p_overshoot ); };
-					case EASE_IN_OUT : function( p_value:Float ) { return Back.easeInOut( p_value, p_startingValue, p_changeInValue, p_duration, p_overshoot ); };
-					case EASE_OUT : function( p_value:Float ) { return Back.easeOut( p_value, p_startingValue, p_changeInValue, p_duration, p_overshoot ); };
-					case EASE_OUT_IN : function( p_value:Float ) { return Back.easeOutIn( p_value, p_startingValue, p_changeInValue, p_duration, p_overshoot ); };
+					case EASE_IN : function( p_value:Float ) { return Back.easeIn( p_value, p_startValue, p_changeInValue, p_duration, p_overshoot ); };
+					case EASE_IN_OUT : function( p_value:Float ) { return Back.easeInOut( p_value, p_startValue, p_changeInValue, p_duration, p_overshoot ); };
+					case EASE_OUT : function( p_value:Float ) { return Back.easeOut( p_value, p_startValue, p_changeInValue, p_duration, p_overshoot ); };
+					case EASE_OUT_IN : function( p_value:Float ) { return Back.easeOutIn( p_value, p_startValue, p_changeInValue, p_duration, p_overshoot ); };
 				}
 			case BOUNCE :
 				switch( p_easeType )
 				{
-					case EASE_IN : function( p_value:Float ){ return Bounce.easeIn( p_value, p_startingValue, p_changeInValue, p_duration ); };
-					case EASE_IN_OUT : function( p_value:Float ) { return Bounce.easeInOut( p_value, p_startingValue, p_changeInValue, p_duration ); };
-					case EASE_OUT : function( p_value:Float ){ return Bounce.easeOut( p_value, p_startingValue, p_changeInValue, p_duration ); };
-					case EASE_OUT_IN : function( p_value:Float ){ return Bounce.easeOutIn( p_value, p_startingValue, p_changeInValue, p_duration ); };
+					case EASE_IN : function( p_value:Float ){ return Bounce.easeIn( p_value, p_startValue, p_changeInValue, p_duration ); };
+					case EASE_IN_OUT : function( p_value:Float ) { return Bounce.easeInOut( p_value, p_startValue, p_changeInValue, p_duration ); };
+					case EASE_OUT : function( p_value:Float ){ return Bounce.easeOut( p_value, p_startValue, p_changeInValue, p_duration ); };
+					case EASE_OUT_IN : function( p_value:Float ){ return Bounce.easeOutIn( p_value, p_startValue, p_changeInValue, p_duration ); };
 				}
 			case CIRCULAR :
 				switch( p_easeType )
 				{
-					case EASE_IN : function( p_value:Float ){ return Circular.easeIn( p_value, p_startingValue, p_changeInValue, p_duration ); };
-					case EASE_IN_OUT : function( p_value:Float ){ return Circular.easeInOut( p_value, p_startingValue, p_changeInValue, p_duration ); };
-					case EASE_OUT : function( p_value:Float ){ return Circular.easeOut( p_value, p_startingValue, p_changeInValue, p_duration ); };
-					case EASE_OUT_IN : function( p_value:Float ){ return Circular.easeOutIn( p_value, p_startingValue, p_changeInValue, p_duration ); };
+					case EASE_IN : function( p_value:Float ){ return Circular.easeIn( p_value, p_startValue, p_changeInValue, p_duration ); };
+					case EASE_IN_OUT : function( p_value:Float ){ return Circular.easeInOut( p_value, p_startValue, p_changeInValue, p_duration ); };
+					case EASE_OUT : function( p_value:Float ){ return Circular.easeOut( p_value, p_startValue, p_changeInValue, p_duration ); };
+					case EASE_OUT_IN : function( p_value:Float ){ return Circular.easeOutIn( p_value, p_startValue, p_changeInValue, p_duration ); };
 				}
 			case CUBIC :
 				switch( p_easeType )
 				{
-					case EASE_IN : function( p_value:Float ){ return Cubic.easeIn( p_value, p_startingValue, p_changeInValue, p_duration ); };
-					case EASE_IN_OUT : function( p_value:Float ){ return Cubic.easeInOut( p_value, p_startingValue, p_changeInValue, p_duration ); };
-					case EASE_OUT : function( p_value:Float ){ return Cubic.easeOut( p_value, p_startingValue, p_changeInValue, p_duration ); };
-					case EASE_OUT_IN : function( p_value:Float ){ return Cubic.easeOutIn( p_value, p_startingValue, p_changeInValue, p_duration ); };
+					case EASE_IN : function( p_value:Float ){ return Cubic.easeIn( p_value, p_startValue, p_changeInValue, p_duration ); };
+					case EASE_IN_OUT : function( p_value:Float ){ return Cubic.easeInOut( p_value, p_startValue, p_changeInValue, p_duration ); };
+					case EASE_OUT : function( p_value:Float ){ return Cubic.easeOut( p_value, p_startValue, p_changeInValue, p_duration ); };
+					case EASE_OUT_IN : function( p_value:Float ){ return Cubic.easeOutIn( p_value, p_startValue, p_changeInValue, p_duration ); };
 				}
 			case ELASTIC( p_period, p_amplitude ) :
 				if ( p_period == null )
@@ -130,52 +130,52 @@ class TweenFactory
 				}
 				switch( p_easeType )
 				{
-					case EASE_IN : function( p_value:Float ){ return Elastic.easeIn( p_value, p_startingValue, p_changeInValue, p_duration, p_period, p_amplitude ); };
-					case EASE_IN_OUT : function( p_value:Float ){ return Elastic.easeInOut( p_value, p_startingValue, p_changeInValue, p_duration, p_period, p_amplitude ); };
-					case EASE_OUT : function( p_value:Float ){ return Elastic.easeOut( p_value, p_startingValue, p_changeInValue, p_duration, p_period, p_amplitude ); };
-					case EASE_OUT_IN : function( p_value:Float ){ return Elastic.easeOutIn( p_value, p_startingValue, p_changeInValue, p_duration, p_period, p_amplitude ); };
+					case EASE_IN : function( p_value:Float ){ return Elastic.easeIn( p_value, p_startValue, p_changeInValue, p_duration, p_period, p_amplitude ); };
+					case EASE_IN_OUT : function( p_value:Float ){ return Elastic.easeInOut( p_value, p_startValue, p_changeInValue, p_duration, p_period, p_amplitude ); };
+					case EASE_OUT : function( p_value:Float ){ return Elastic.easeOut( p_value, p_startValue, p_changeInValue, p_duration, p_period, p_amplitude ); };
+					case EASE_OUT_IN : function( p_value:Float ){ return Elastic.easeOutIn( p_value, p_startValue, p_changeInValue, p_duration, p_period, p_amplitude ); };
 				}
 			case EXPONENTIAL :
 				switch( p_easeType )
 				{
-					case EASE_IN : function( p_value:Float ){ return Exponential.easeIn( p_value, p_startingValue, p_changeInValue, p_duration ); };
-					case EASE_IN_OUT : function( p_value:Float ){ return Exponential.easeInOut( p_value, p_startingValue, p_changeInValue, p_duration ); };
-					case EASE_OUT : function( p_value:Float ){ return Exponential.easeOut( p_value, p_startingValue, p_changeInValue, p_duration ); };
-					case EASE_OUT_IN : function( p_value:Float ){ return Exponential.easeOutIn( p_value, p_startingValue, p_changeInValue, p_duration ); };
+					case EASE_IN : function( p_value:Float ){ return Exponential.easeIn( p_value, p_startValue, p_changeInValue, p_duration ); };
+					case EASE_IN_OUT : function( p_value:Float ){ return Exponential.easeInOut( p_value, p_startValue, p_changeInValue, p_duration ); };
+					case EASE_OUT : function( p_value:Float ){ return Exponential.easeOut( p_value, p_startValue, p_changeInValue, p_duration ); };
+					case EASE_OUT_IN : function( p_value:Float ){ return Exponential.easeOutIn( p_value, p_startValue, p_changeInValue, p_duration ); };
 				}
 			case LINEAR :
-				function( p_value:Float ){ return Linear.ease( p_value, p_startingValue, p_changeInValue, p_duration ); };
+				function( p_value:Float ){ return Linear.ease( p_value, p_startValue, p_changeInValue, p_duration ); };
 			case QUADRATIC :
 				switch( p_easeType )
 				{
-					case EASE_IN : function( p_value:Float ){ return Quadratic.easeIn( p_value, p_startingValue, p_changeInValue, p_duration ); };
-					case EASE_IN_OUT : function( p_value:Float ){ return Quadratic.easeInOut( p_value, p_startingValue, p_changeInValue, p_duration ); };
-					case EASE_OUT : function( p_value:Float ){ return Quadratic.easeOut( p_value, p_startingValue, p_changeInValue, p_duration ); };
-					case EASE_OUT_IN : function( p_value:Float ){ return Quadratic.easeOutIn( p_value, p_startingValue, p_changeInValue, p_duration ); };
+					case EASE_IN : function( p_value:Float ){ return Quadratic.easeIn( p_value, p_startValue, p_changeInValue, p_duration ); };
+					case EASE_IN_OUT : function( p_value:Float ){ return Quadratic.easeInOut( p_value, p_startValue, p_changeInValue, p_duration ); };
+					case EASE_OUT : function( p_value:Float ){ return Quadratic.easeOut( p_value, p_startValue, p_changeInValue, p_duration ); };
+					case EASE_OUT_IN : function( p_value:Float ){ return Quadratic.easeOutIn( p_value, p_startValue, p_changeInValue, p_duration ); };
 				}
 			case QUARTIC :
 				switch( p_easeType )
 				{
-					case EASE_IN : function( p_value:Float ){ return Quartic.easeIn( p_value, p_startingValue, p_changeInValue, p_duration ); };
-					case EASE_IN_OUT : function( p_value:Float ){ return Quartic.easeInOut( p_value, p_startingValue, p_changeInValue, p_duration ); };
-					case EASE_OUT : function( p_value:Float ){ return Quartic.easeOut( p_value, p_startingValue, p_changeInValue, p_duration ); };
-					case EASE_OUT_IN : function( p_value:Float ){ return Quartic.easeOutIn( p_value, p_startingValue, p_changeInValue, p_duration ); };
+					case EASE_IN : function( p_value:Float ){ return Quartic.easeIn( p_value, p_startValue, p_changeInValue, p_duration ); };
+					case EASE_IN_OUT : function( p_value:Float ){ return Quartic.easeInOut( p_value, p_startValue, p_changeInValue, p_duration ); };
+					case EASE_OUT : function( p_value:Float ){ return Quartic.easeOut( p_value, p_startValue, p_changeInValue, p_duration ); };
+					case EASE_OUT_IN : function( p_value:Float ){ return Quartic.easeOutIn( p_value, p_startValue, p_changeInValue, p_duration ); };
 				}
 			case QUINTIC :
 				switch( p_easeType )
 				{
-					case EASE_IN : function( p_value:Float ){ return Quintic.easeIn( p_value, p_startingValue, p_changeInValue, p_duration ); };
-					case EASE_IN_OUT : function( p_value:Float ){ return Quintic.easeInOut( p_value, p_startingValue, p_changeInValue, p_duration ); };
-					case EASE_OUT : function( p_value:Float ){ return Quintic.easeOut( p_value, p_startingValue, p_changeInValue, p_duration ); };
-					case EASE_OUT_IN : function( p_value:Float ){ return Quintic.easeOutIn( p_value, p_startingValue, p_changeInValue, p_duration ); };
+					case EASE_IN : function( p_value:Float ){ return Quintic.easeIn( p_value, p_startValue, p_changeInValue, p_duration ); };
+					case EASE_IN_OUT : function( p_value:Float ){ return Quintic.easeInOut( p_value, p_startValue, p_changeInValue, p_duration ); };
+					case EASE_OUT : function( p_value:Float ){ return Quintic.easeOut( p_value, p_startValue, p_changeInValue, p_duration ); };
+					case EASE_OUT_IN : function( p_value:Float ){ return Quintic.easeOutIn( p_value, p_startValue, p_changeInValue, p_duration ); };
 				}
 			case SINE :
 				switch( p_easeType )
 				{
-					case EASE_IN : function( p_value:Float ){ return Sine.easeIn( p_value, p_startingValue, p_changeInValue, p_duration ); };
-					case EASE_IN_OUT : function( p_value:Float ){ return Sine.easeInOut( p_value, p_startingValue, p_changeInValue, p_duration ); };
-					case EASE_OUT : function( p_value:Float ){ return Sine.easeOut( p_value, p_startingValue, p_changeInValue, p_duration ); };
-					case EASE_OUT_IN : function( p_value:Float ){ return Sine.easeOutIn( p_value, p_startingValue, p_changeInValue, p_duration ); };
+					case EASE_IN : function( p_value:Float ){ return Sine.easeIn( p_value, p_startValue, p_changeInValue, p_duration ); };
+					case EASE_IN_OUT : function( p_value:Float ){ return Sine.easeInOut( p_value, p_startValue, p_changeInValue, p_duration ); };
+					case EASE_OUT : function( p_value:Float ){ return Sine.easeOut( p_value, p_startValue, p_changeInValue, p_duration ); };
+					case EASE_OUT_IN : function( p_value:Float ){ return Sine.easeOutIn( p_value, p_startValue, p_changeInValue, p_duration ); };
 				}
 		}
 	}
