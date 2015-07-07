@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+	<settings>
+		<assets>
+			<packages default="assets" audio="assets.audio" />
+		</assets>
+		<fullScreen>default</fullScreen>
+		<font name="orbitron-webfont" />
+		<asciiArt>
+ _                       
+| |___      _____  ___ _________ _
+| __\ \ /\ / / _ \/ _ \_  / _ \ '_|
+| |__\ V  V /  __/  __// /  __/ |    
+ \____\_/\_/ \___|\___/___\___|_|   
+  tweezer: easy tweening & easing
+		</asciiArt>
+	</settings>
+	<gui>
+		<preloaderComplete>Tap anywhere to start</preloaderComplete>
+	</gui>
+</data>
