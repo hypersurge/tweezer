@@ -4,6 +4,8 @@
 Tweezer is an easy tweening and easing library designed primarily for use with [awe6](http://awe6.org), the inverted game framework.
 
 This [Haxe](http://haxe.org) library extends [Robert Penner's easing functions](http://robertpenner.com/easing/) to allow programmatic values to be [inbetweened](https://en.wikipedia.org/wiki/Inbetweening).  Or ... "add flavor to motion"!  Great for usage in game GUI transitions.
+
+See some [examples](http://hypersurge.github.io/tweezer/).
 	
 ## Usage
 
@@ -67,4 +69,4 @@ And the following Tween Types are included:
  * Quintic: easing equation function for a quintic (t^5)
  * Sine: easing equation function for a sinusoidal (sin(t))
  
-A demo suite, to visually illustrate the various combinations of Easing and Tweeing types, is available in the [demo folder](https://github.com/hypersurge/tweezer/tree/master/demo).  The demo uses the awe6 and createjs libraries available on haxelib.
+A demo suite, to visually illustrate the various combinations of Easing and Tweeing types, is available in the [demo folder](https://github.com/hypersurge/tweezer/tree/master/demo).  The demo uses the awe6 and createjs libraries available on haxelib and can be [seen online here](http://hypersurge.github.io/tweezer/).
